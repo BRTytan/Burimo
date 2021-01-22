@@ -13,11 +13,11 @@ nav{
     display:flex;
     justify-content: center;
 }
-#text, #input, #sugestion, #definition {
+#text, #output #sugestion #definition {
     height: 30px;
     font-size: 16pt;
     padding: 5px;
-color: white    ;
+    color: white;
 }
 /*##########################################*/
 ul{
