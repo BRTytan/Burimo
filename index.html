@@ -25,8 +25,12 @@
         </div>
         <button style="margin:5px;height:30px;width:50px;" onclick="match()">Enter</button>
         <div style="margin:5px;" id="text"></div>
-            <p id="text" style="display:flex;justify-content:center;">Não use: "<b id="output"></b>", <b id="definition"></b>
-            <p id="text" style="display:flex;justify-content:center;">Use "<b id="sugestion"></b>" no lugar</p>
+        <div>
+            <p id="text" style="justify-content:center;flex-wrap: wrap;">Não use: "<b id="output"></b>".<br>
+            <p id="text" style="justify-content:center;flex-wrap: wrap;">Use "<b id="sugestion"></b>" no lugar.<br>
+        </div>
+        <button id="more" onclick="esconder()">Saber mais?</button>
+        <p id="definition"></p>
     </body>
 
 </html>
