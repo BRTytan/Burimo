@@ -103,9 +103,8 @@ function match() {
         if (res === null) {
             count++;
         } else {
-            document.getElementById("input").innerHTML = res + " </br>";
             document.getElementById("sugestion").innerHTML = sugestions[count] + " </br>";
-
+            document.getElementById("output").innerHTML = res;
         }
     });
 }
@@ -113,7 +112,7 @@ function match() {
 function getText() {
     let text = document.getElementById("text").value;
 
-    document.getElementById("input").innerHTML = "<p>Você digitou: <br/>" + text;
+    document.getElementById("text").innerHTML = text;
 
 }
 /* listas input */
