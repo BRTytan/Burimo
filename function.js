@@ -94,18 +94,6 @@ const sugestions = [
     "Confusão, trapalhada, bagunça",
 ];
 
-
-function pushWritebox() {
-    let text = document.getElementById("text").value;
-    let writebox = [];
-    writebox.push(text);
-    document.getElementById("output2").innerHTML = writebox;
-}
-function myFunction() {
-    input = document.getElementById("text").value;
-    array.push(input);
-    document.getElementById("output2").innerHTML = array;
-}
 /* função de match entre lista input e palavras ofensivas */
 function match() {
     input = document.getElementById("text").value;
@@ -125,7 +113,7 @@ function match() {
 function getText() {
     let text = document.getElementById("text").value;
 
-    document.getElementById("output").innerHTML = "<p>Você digitou: <br/>" + text;
+    document.getElementById("input").innerHTML = "<p>Você digitou: <br/>" + text;
 
 }
 /* listas input */
