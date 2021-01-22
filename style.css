@@ -13,11 +13,14 @@ nav{
     display:flex;
     justify-content: center;
 }
-#text, #output #sugestion #definition {
+#text, #output, #sugestion, #definition, #dsad {
     height: 30px;
     font-size: 16pt;
     padding: 5px;
     color: white;
+}
+#more {
+
 }
 /*##########################################*/
 ul{
