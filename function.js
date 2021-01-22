@@ -93,7 +93,21 @@ const sugestions = [
     "Não usar!",
     "Confusão, trapalhada, bagunça",
 ];
+const definitions = [
+    "A palavra significa literalmente: mula, a cruza de um asno macho com uma égua. O termo surge na época da escravização, quando muitas mulheres escravizadas eram violentadas por “seus senhores” e tinham filhos que eram chamados de mulatos."
+];
 
+function pushWritebox() {
+    let text = document.getElementById("text").value;
+    let writebox = [];
+    writebox.push(text);
+    document.getElementById("output2").innerHTML = writebox;
+}
+function myFunction() {
+    input = document.getElementById("text").value;
+    array.push(input);
+    document.getElementById("output2").innerHTML = array;
+}
 /* função de match entre lista input e palavras ofensivas */
 function match() {
     input = document.getElementById("text").value;
@@ -103,10 +117,18 @@ function match() {
         if (res === null) {
             count++;
         } else {
-            document.getElementById("sugestion").innerHTML = sugestions[count] + " </br>";
+            document.getElementById("sugestion").innerHTML = sugestions[count];
             document.getElementById("output").innerHTML = res;
+
         }
     });
+}
+function esconder() {
+    document.getElementById("more").addEventListener("click", function () {
+        document.getElementById("more").hidden = true;
+
+    },
+        document.getElementById("definition").innerHTML = definitions[0])
 }
 /* pegar value text */
 function getText() {
