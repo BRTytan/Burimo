@@ -109,19 +109,15 @@ function myFunction() {
 /* função de match entre lista input e palavras ofensivas */
 function match() {
     input = document.getElementById("text").value;
-    console.log(input.toUpperCase());
     var count = 0;
     words.forEach(function (word) {
-
         var res = input.match(word);
-        console.log(res);
-        if (input.toUpperCase() != word.toUpperCase()) {
+        if (res === null) {
             count++;
-
-            console.log(count);
         } else {
             document.getElementById("input").innerHTML = res + " </br>";
             document.getElementById("sugestion").innerHTML = sugestions[count] + " </br>";
+
         }
     });
 }
