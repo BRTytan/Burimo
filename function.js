@@ -120,8 +120,8 @@ function match() {
 
             console.log(count);
         } else {
-            document.getElementById("output3").innerHTML = sugestions[count] + " </br>";
-            document.getElementById("output2").innerHTML = res + " </br>";
+            document.getElementById("input").innerHTML = res + " </br>";
+            document.getElementById("sugestion").innerHTML = sugestions[count] + " </br>";
         }
     });
 }
