@@ -1,3 +1,4 @@
+/* Variaveis */
 const datas = [
     {
         "termoPalavra": "Denegrir, denegrindo",
@@ -228,18 +229,6 @@ const datas = [
         "categoria": "Racial"
     }
 ];
-
-function pushWritebox() {
-    let text = document.getElementById("text").value;
-    let writebox = [];
-    writebox.push(text);
-    document.getElementById("output2").innerHTML = writebox;
-}
-function myFunction() {
-    input = document.getElementById("text").value;
-    array.push(input);
-    document.getElementById("output2").innerHTML = array;
-}
 /* função de match entre lista input e palavras ofensivas */
 function match() {
     var input = document.getElementById("text").value;
@@ -252,7 +241,7 @@ function match() {
     document.getElementById("definition").innerHTML = datas[count].explicao;
 }
 
-
+/* função esconder botão saiba mais */
 function esconder() {
     document.getElementById("more").addEventListener("click", function () {
         document.getElementById("more").hidden = false;
