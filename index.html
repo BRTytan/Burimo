@@ -18,10 +18,10 @@
     </nav>
 
     <body>
-        <img style="width: 50%;" alt="" src="images\Frame 7.png">
+        <img style="width: 50%;max-width: 700px;" alt="" src="images\Frame 7.png">
         <div style="margin:20px;">
-            <input style="color:black;width:75%;text-align: center;" type="text"
-                placeholder="Escreva sua palavra aqui!!" id="text" />
+            <input style="color:black;width:75%;text-align: center;max-width: 700px;" type="text"
+                placeholder="Escreva sua palavra aqui!!" id="text" onkeyup="submit()"/>
             <br /><br />
 
         </div>
@@ -29,13 +29,15 @@
             onclick="match()">Analisar</button>
         <div style="margin:5px;" id="text"></div>
         <div>
-            <p id="text" style="justify-content:center;flex-wrap: wrap;">Não use: "<b id="output"></b>".<br>
-            <p id="text" style="justify-content:center;flex-wrap: wrap;">Use "<b id="sugestion"></b>" no lugar.<br>
+            <p id="text" style="justify-content:center;flex-wrap: wrap;"><b id="output"></b><br>
+            <p id="text" style="justify-content:center;flex-wrap: wrap;"><b id="output1"></b><br>
+            <p id="text" style="justify-content:center;flex-wrap: wrap;"><b id="sugestion"></b><br>
         </div>
         <button style="width: 100px; border-radius: 30px; background-color:#1eadff;" id="more" onclick="esconder()">
             Saber mais?
         </button>
         <p id="definition"></p>
+
     </body>
 
 </html>

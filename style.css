@@ -13,7 +13,7 @@ nav{
     display:flex;
     justify-content: center;
 }
-#text, #output, #sugestion, #definition, #dsad {
+#text, #output, #sugestion, #definition, #output1 {
     height: 30px;
     font-size: 16pt;
     padding: 5px;

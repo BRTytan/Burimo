@@ -2,7 +2,7 @@
 const datas = [
     {
         "termoPalavra": "Denegrir, denegrindo",
-        "explicao": "Você sabia que o nome dado a este móvel faz referência aos criados (geralmente escravizados) que deviam segurar objetos para seus senhores? Como estes criados não podiam falar, eram considerados mudos, daí o termo criado-mudo.",
+        "explicao": "'Fazer ficar mais negro; tornar escuro'. Em sentido FIGURADO, significa 'Manchar a reputação de; difamar'",
         "sugesto": "Difamar ",
         "categoria": "Racial"
     },
@@ -16,15 +16,13 @@ const datas = [
         "termoPalavra": "Cabelo ruim",
         "explicao": "Termos racistas usadas como bullying que depreciam a imagem e o cabelo de pessoas negras. Falar mal das características dos cabelos Afro também é racismo.",
         "sugesto": "Cabelo crespo, chacheado, afro",
-        "categoria": "Racial",
-        "undefined": "Mulata"
+        "categoria": "Racial"
     },
     {
         "termoPalavra": "Lista negra",
         "explicao": "Usada para descrever pessoas que, por alguma razão negativa, estão excluídas de certos grupos, ou ainda que uma pessoa está sendo perseguida. Mais uma vez a palavra “negra” é usada como algo negativo.",
         "sugesto": "Lista proibida/restrita",
-        "categoria": "Racial",
-        "undefined": "A palavra significa literalmente: mula, a cruza de um asno macho com uma égua. O termo surge na época da escravização, quando muitas mulheres escravizadas eram violentadas por “seus senhores” e tinham filhos que eram chamados de mulatos."
+        "categoria": "Racial"
     },
     {
         "termoPalavra": "Ovelha negra",
@@ -229,16 +227,35 @@ const datas = [
         "categoria": "Racial"
     }
 ];
+const verbs = [
+    "ar",
+    "er",
+    "ir"
+];
 /* função de match entre lista input e palavras ofensivas */
 function match() {
-    var input = document.getElementById("text").value;
+    var input = document.getElementById("text").value.trim();
+    var indice = 0;
     var count = 0;
-    while (input.toLowerCase() != datas[count].termoPalavra.toLowerCase() && count < 44) {
-        count++;
+
+    while (input.toLowerCase() != datas[indice].termoPalavra.toLowerCase() && indice < 44) {
+        if (indice < 44) {
+            indice++;
+        }
+        else {
+            indice = 44;
+        }
+
     }
-    document.getElementById("output").innerHTML = datas[count].termoPalavra;
-    document.getElementById("sugestion").innerHTML = datas[count].sugesto;
-    document.getElementById("definition").innerHTML = datas[count].explicao;
+    if (indice < 44) {
+        document.getElementById("output").innerHTML = "Não use: "+ '"' + datas[indice].termoPalavra +'".';
+        document.getElementById("sugestion").innerHTML = "Use: "+ '"' + datas[indice].sugesto +'" no lugar.';
+        document.getElementById("definition").innerHTML = datas[indice].explicao;
+    }
+    else{
+        document.getElementById("output1").innerHTML = input + " não é valido."
+}
+
 }
 
 /* função esconder botão saiba mais */
@@ -246,5 +263,111 @@ function esconder() {
     document.getElementById("more").addEventListener("click", function () {
         document.getElementById("more").hidden = false;
     }, document.getElementById("more").hidden = true)
+
+}
+
+/*             */
+
+const universeOfDiscourse = [
+"Denegrir, denegrindo",
+"Criado mudo",
+"Cabelo ruim",
+"Lista negra",
+"Ovelha negra",
+"Escravos",
+"Cor do pecado",
+"Mulata",
+"Não sou tuas negas",
+"Mercado negro",
+"Inveja branca",
+"João sem braço",
+"Dados esquizofrênicos",
+"Dados bipolares",
+"portador de deficiência",
+"Louco",
+"Maluco",
+"Retardado",
+"Mongol",
+"Surdo-mudo",
+"Bipolar",
+"Sequelado",
+"Cego de raiva",
+"Dar uma de João sem braço",
+"Não temos braço para isso",
+"Desculpa de aleijado é muleta",
+"A coisa ta preta",
+"A dar com pau",
+"Cor de pele",
+"Coisa de preto",
+"Serviço de preto",
+"trabalho de preto",
+"Domestica",
+"Fazer nas coxas",
+"Humor negro",
+"Indiada",
+"Judiar",
+"Judiaria",
+"Moreno (a)",
+"Nega maluca",
+"Nhaca",
+"Tem o pé na cozinha",
+"Samba do criolo doido"
+];
+function getBigram(word) {
+    let result = [];
+
+    for (let i = 0; i < word.length-1; i++) {
+        result.push(word[i] + word[i+1]);
+    }
+
+    return result;
+}
+
+function getSimilarity(word1, word2) {
+    word1 = word1.toLowerCase();
+    word2 = word2.toLowerCase();
+    const bigram1 = getBigram(word1), bigram2 = getBigram(word2);
+    let similar = [];
+
+    for (let i = 0; i < bigram1.length; i++) {
+        if (bigram2.indexOf(bigram1[i]) > -1) {
+            similar.push(bigram1[i]);
+        }
+    }
+
+    return similar.length / Math.max(bigram1.length, bigram2.length);
+}
+
+function autoCorrect(word, knownWords=universeOfDiscourse, similarityThreshold=0.5) {
+    let maxSimilarity = 0;
+    let mostSimilar = word;
+
+    for (let i = 0; i < knownWords.length; i++) {
+        let similarity = getSimilarity(knownWords[i], word);
+        if (similarity > maxSimilarity) {
+            maxSimilarity = similarity;
+            mostSimilar = knownWords[i];
+        }
+    }
+
+    return maxSimilarity > similarityThreshold ? mostSimilar : word;
+}
+
+function submit() {
+    let text = document.getElementById("text").value;
+
+    if (text.length > 0) {
+        const lastChar = text[text.length - 1];
         
+        if (lastChar === " ") {
+            text = text.split(" ");
+            const lastWord = text[text.length - 2];
+            text[text.length - 2] = autoCorrect(lastWord);
+            text = text.join(" ");
+        }
+
+        document.getElementById("text").value = text;
+    }
+    else
+        document.getElementById("output").innerHTML = "";
 }
