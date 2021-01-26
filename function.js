@@ -248,13 +248,13 @@ function match() {
 
     }
     if (indice < 44) {
-        document.getElementById("output").innerHTML = "Não use: "+ '"' + datas[indice].termoPalavra +'".';
-        document.getElementById("sugestion").innerHTML = "Use: "+ '"' + datas[indice].sugesto +'" no lugar.';
+        document.getElementById("output").innerHTML = "Não use: " + '"' + datas[indice].termoPalavra + '".';
+        document.getElementById("sugestion").innerHTML = "Use: " + '"' + datas[indice].sugesto + '" no lugar.';
         document.getElementById("definition").innerHTML = datas[indice].explicao;
     }
-    else{
+    else {
         document.getElementById("output1").innerHTML = input + " não é valido."
-}
+    }
 
 }
 
@@ -269,55 +269,56 @@ function esconder() {
 /*             */
 
 const universeOfDiscourse = [
-"Denegrir, denegrindo",
-"Criado mudo",
-"Cabelo ruim",
-"Lista negra",
-"Ovelha negra",
-"Escravos",
-"Cor do pecado",
-"Mulata",
-"Não sou tuas negas",
-"Mercado negro",
-"Inveja branca",
-"João sem braço",
-"Dados esquizofrênicos",
-"Dados bipolares",
-"portador de deficiência",
-"Louco",
-"Maluco",
-"Retardado",
-"Mongol",
-"Surdo-mudo",
-"Bipolar",
-"Sequelado",
-"Cego de raiva",
-"Dar uma de João sem braço",
-"Não temos braço para isso",
-"Desculpa de aleijado é muleta",
-"A coisa ta preta",
-"A dar com pau",
-"Cor de pele",
-"Coisa de preto",
-"Serviço de preto",
-"trabalho de preto",
-"Domestica",
-"Fazer nas coxas",
-"Humor negro",
-"Indiada",
-"Judiar",
-"Judiaria",
-"Moreno (a)",
-"Nega maluca",
-"Nhaca",
-"Tem o pé na cozinha",
-"Samba do criolo doido"
+    "Denegrir",
+    "denegrindo",
+    "Criado mudo",
+    "Cabelo ruim",
+    "Lista negra",
+    "Ovelha negra",
+    "Escravos",
+    "Cor do pecado",
+    "Mulata",
+    "Não sou tuas negas",
+    "Mercado negro",
+    "Inveja branca",
+    "João sem braço",
+    "Dados esquizofrênicos",
+    "Dados bipolares",
+    "portador de deficiência",
+    "Louco",
+    "Maluco",
+    "Retardado",
+    "Mongol",
+    "Surdo-mudo",
+    "Bipolar",
+    "Sequelado",
+    "Cego de raiva",
+    "Dar uma de João sem braço",
+    "Não temos braço para isso",
+    "Desculpa de aleijado é muleta",
+    "A coisa ta preta",
+    "A dar com pau",
+    "Cor de pele",
+    "Coisa de preto",
+    "Serviço de preto",
+    "trabalho de preto",
+    "Domestica",
+    "Fazer nas coxas",
+    "Humor negro",
+    "Indiada",
+    "Judiar",
+    "Judiaria",
+    "Moreno (a)",
+    "Nega maluca",
+    "Nhaca",
+    "Tem o pé na cozinha",
+    "Samba do criolo doido"
 ];
 function getBigram(word) {
     let result = [];
 
-    for (let i = 0; i < word.length-1; i++) {
-        result.push(word[i] + word[i+1]);
+    for (let i = 0; i < word.length - 1; i++) {
+        result.push(word[i] + word[i + 1]);
     }
 
     return result;
@@ -338,7 +339,7 @@ function getSimilarity(word1, word2) {
     return similar.length / Math.max(bigram1.length, bigram2.length);
 }
 
-function autoCorrect(word, knownWords=universeOfDiscourse, similarityThreshold=0.5) {
+function autoCorrect(word, knownWords = universeOfDiscourse, similarityThreshold = 0.5) {
     let maxSimilarity = 0;
     let mostSimilar = word;
 
@@ -358,7 +359,7 @@ function submit() {
 
     if (text.length > 0) {
         const lastChar = text[text.length - 1];
-        
+
         if (lastChar === " ") {
             text = text.split(" ");
             const lastWord = text[text.length - 2];
