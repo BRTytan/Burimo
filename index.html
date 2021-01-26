@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <script src="function.js"></script>
-        
+
         <title>Burimo</title>
     </head>
     <nav class="nav1">
@@ -19,18 +20,21 @@
     <body>
         <img style="width: 50%;" alt="" src="images\Frame 7.png">
         <div style="margin:20px;">
-            <input style="color:black;width:75%;text-align: center;" type="text" placeholder="Escreva sua palavra aqui!!"
-                id="text" />
+            <input style="color:black;width:75%;text-align: center;" type="text"
+                placeholder="Escreva sua palavra aqui!!" id="text" />
             <br /><br />
 
         </div>
-        <button style="margin:5px;height:30px;width:50px;background-color:#1196E1;" onclick="match()">Analisar</button>
+        <button style="margin:5px;height: 30px; width: 100px; border-radius: 30px; background-color:#1196E1;"
+            onclick="match()">Analisar</button>
         <div style="margin:5px;" id="text"></div>
         <div>
             <p id="text" style="justify-content:center;flex-wrap: wrap;">Não use: "<b id="output"></b>".<br>
             <p id="text" style="justify-content:center;flex-wrap: wrap;">Use "<b id="sugestion"></b>" no lugar.<br>
         </div>
-        <button id="more" onclick="esconder()">Saber mais?</button>
+        <button style="width: 100px; border-radius: 30px; background-color:#1196E1;" id="more" onclick="esconder()">
+            Saber mais?
+        </button>
         <p id="definition"></p>
     </body>
 
