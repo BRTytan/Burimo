@@ -9,7 +9,7 @@ body{
 .section-pai{
     background-image: url('images/Desktop2.png');
     background-size: cover; 
-    height: 400px;
+    height: 450px;
     display: flex;
     flex-flow: wrap;
     justify-content: center;
@@ -23,7 +23,7 @@ body{
 .section-mid{
     height: 180px; 
     width: 600px;
-    margin-top: 100px;
+    margin-top: 125px;
     justify-content: center;
     display:flex;
     box-shadow: 2px 1px 10px 1px black; 
@@ -52,14 +52,11 @@ body{
 }
 /*navegação*/
 nav{
-    background-image: url('images/Frame7.png');
-    background-color: blueviolet;
-    background-size: 100px;
-    background-repeat: no-repeat;
+    background-image: url('images/Desktop2.png');
+    background-size: cover;
     height: 75px;
     width: 100%;
     position: sticky;
-    
 }
 
 ul{
