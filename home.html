@@ -10,7 +10,7 @@
     </head>
 
     <body>
-        <nav class="nav">
+        <nav>
             <ul style="display: flex;justify-content: flex-end;">
                 <li><a style="margin:10px;" href="home.html">Home</a></li>
                 <li><a style="margin:10px;" href="index.html">Burimo</a></li>
@@ -18,57 +18,59 @@
             </ul>
         </nav>
 
-        <section style="position: relative; display:flex; justify-content: center;">
-            <header style="background-color: blueviolet ; height:200px;width: 100%;">
+        <section class="section-pai">
+            <section class="section-top">
                 <h3 style="margin: 0px;color:white;">Torne a inclusão um habito!</h3>
                 <p style="color:white;">Retire imediatamente os vieses da sua escrita enquanto aprende sobre a linguagem
                     inclusiva.</p>
-            </header>
-            <section style="height: 200px; margin-top: 100px; box-shadow: 2px 1px 10px 1px black; border-radius: 10px; background-color: white;width: 600px; position: absolute"></section>
-            <section style="background-color:black;height: 20px;margin-top: 400px;">
-
             </section>
+            <section class="section-mid"></section>
+            <section class="section-bottom"></section>
         </section>
         <section style="background-color: darkgrey;height: 250px;">
             <h3 style="margin: 0px;">Veja aqui o que você pode melhorar no seu texto: </h3>
             <b id="outputText"></b>
         </section>
         <!--section lado a lado para disponibilizar texto a esquerda e imagem a direita-->
-        <section>
-            <h1>Sobre a <b style="color: blueviolet;">Burimo</b></h1>
-            <br>
-            <p>
-                Burimo significa inclusão em, uma lingua africana. E acreditamos <br>
-                que a inclusão começa pela escrita! A escrita tem o poder de mudar <br>
-                como pensamos, agimos e influenciamos as pessoas a nossa volta. <br>
-            </p>
-            <p>
-                Por isso nascemos com o objetivo de ajudar pessoas a se tornarem<br>
-                mais inclusivas, tornando a inclusão um hábito. Facilitando <br>
-                ambientes de trabalho mais inclusivos a imediatamente, ao mesmo <br>
-                tempo que desenvolve e educa individualmente cada pessoa sobre <br>
-                linguagem inclusiva. <br>
-            </p>
-            <img>
+        <section style="display:flex;justify-content: space-around;flex-flow: row wrap;">
+            <div>
+                <h1>Sobre a <b style="color: blueviolet;">Burimo</b></h1>
+                <br>
+                <p>
+                    Burimo significa inclusão em, uma lingua africana. E acreditamos <br>
+                    que a inclusão começa pela escrita! A escrita tem o poder de mudar <br>
+                    como pensamos, agimos e influenciamos as pessoas a nossa volta. <br>
+                </p>
+
+                <p>
+                    Por isso nascemos com o objetivo de ajudar pessoas a se tornarem<br>
+                    mais inclusivas, tornando a inclusão um hábito. Facilitando <br>
+                    ambientes de trabalho mais inclusivos a imediatamente, ao mesmo <br>
+                    tempo que desenvolve e educa individualmente cada pessoa sobre <br>
+                    linguagem inclusiva. <br>
+                </p>
+            </div>
+            <img style="border-radius: 100%;" alt="" src="images/moça1.jpeg">
+            <section style="text-align: right; margin-right:10%;width: 100%;">
+                <h1>A importância da Linguagem Inclusiva</h1>
+                <p>
+                    ao redor do mundo existem milhares de pessoas que, mesmo <br>
+                    trabalhando em empresas que promovem diversidade e inclusão, <br>
+                    sofrem diariamente com micro agressões de colegas que não <br>
+                    percebem seus vieses e preconceitos, e acabam os deixando sair em <br>
+                    sua escrita. Micro agressões que causam extemo desconforto e <br>
+                    diminuição do senso de pertencimento da pessoa, para com a empresa <br>
+                </p>
+                <p>
+                    A linguagem inclusiva é o caminho para que essas micro agressões <br>
+                    acabem e para que os profissionais aprendam a importância de <br>
+                    conhecer e evitar seus vieses pessoais. <br>
+                </p>
+            </section>
         </section>
-        <section>
-            <h1>A importância da Linguagem Inclusiva</h1>
-            <p>
-                ao redor do mundo existem milhares de pessoas que, mesmo <br>
-                trabalhando em empresas que promovem diversidade e inclusão, <br>
-                sofrem diariamente com micro agressões de colegas que não <br>
-                percebem seus vieses e preconceitos, e acabam os deixando sair em <br>
-                sua escrita. Micro agressões que causam extemo desconforto e <br>
-                diminuição do senso de pertencimento da pessoa, para com a empresa <br>
-            </p>
-            <p>
-                A linguagem inclusiva é o caminho para que essas micro agressões <br>
-                acabem e para que os profissionais aprendam a importância de <br>
-                conhecer e evitar seus vieses pessoais. <br>
-            </p>
-        </section>
-        <footer>
-            <div style="text-align: center;">
+
+        <footer class="footer-pai">
+            <div class="footer-column" style="text-align: center;">
                 <h1>Contribua!</p>
                     <p style="font-size: 15px;">
                         nós ajude a mapear ainda mais palavras e termos preconceituosos.<br>
@@ -76,20 +78,23 @@
                             seja no trabalho ou em qualquer outro lugar</b>
                     </p>
             </div>
-            <div>
+            <div class="footer-column">
                 <h1>Entre em contato:</h1>
-                <form action="/pagina-processa-dados-do-form" method="post">
+                <form action="" method="post">
                     <div>
                         <label for="nome">Nome:</label>
-                        <input type="text" id="nome" />
+                        <input type="text" name="Nome" />
                     </div>
                     <div>
                         <label for="email">E-mail:</label>
-                        <input type="email" id="email" />
+                        <input type="text" name="Email" />
                     </div>
                     <div>
                         <label for="msg">Mensagem:</label>
-                        <textarea id="msg"></textarea>
+                        <input type="text" name="Mensagem" />
+                    </div>
+                    <div>
+                        <button type="submit" id="submit-form">Submit</button>
                     </div>
                 </form>
             </div>
