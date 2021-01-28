@@ -51,6 +51,11 @@ body{
 
 }
 /*navegação*/
+.navegacao a.linkAtivo {
+    color: rgb(248, 153, 0);
+    font-weight: bolder;
+    text-decoration: none;  
+}
 nav{
     background-image: url('images/Desktop2.png');
     background-size: cover;
